@@ -48,7 +48,7 @@ parser_train.add_argument('--batch-size',     type=int,   default=20,           
 parser_train.add_argument('--vgg-path',       type=str,   default=VGG_PATH,               help="Path to pre-trained VGG weights")
 parser_train.add_argument('--train-dir',      type=str,   default=TRAIN_DIR,              help="Path to training data")
 parser_train.add_argument('--target-style',   type=str,   default='data/styles/line.jpg', help="Style file")
-parser_train.add_argument('--validation-dir', type=str,   default='data/originals',       help="Path to test images")
+parser_train.add_argument('--validation-dir', type=str,   default='data/validation',      help="Path to validation images")
 # Training checkpoints
 parser_train.add_argument('--iter-visualize', type=int,   default=1000,                   help="Visualize per iter")
 parser_train.add_argument('--iter-save',      type=int,   default=5000,                   help="Save per iter")

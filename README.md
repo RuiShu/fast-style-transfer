@@ -27,18 +27,18 @@ python main.py train \
   --content-weight 15 \
   --style-weight 100 \
   --target-style data/styles/hatch.jpg \
-  --validation-dir data/originals
+  --validation-dir data/validation
 ```
 Models are automatically saved to `checkpoints/MODEL_NAME` where `MODEL_NAME` is `STYLE_sw=STYLE_WEIGHT` (e.g. `checkpoints/hatch_sw=100`). A validation directory is required to monitor the visual performance of the fast-style-transfer network. The default arguments work fairly well, so the only thing you really need to provide is the target style.
 
 **Test model**
 
-Once trained we can test the model on, for example, images in the `data/originals` directory:
+Once trained we can test the model on, for example, images in the `data/validation` directory:
 ```
 python main.py test \
   --model-name MODEL_NAME \
   --ckpt CKPT \
-  --test-dir data/originals \
+  --test-dir data/validation \
 ```
 If `--ckpt` is not provided, the latest checkpoint from `checkpoints/MODEL_NAME` is loaded.
 
