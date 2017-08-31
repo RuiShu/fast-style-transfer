@@ -53,7 +53,7 @@ Or if you have a specific jpg/png/mp4 file:
 python main.py test \
   --model-name MODEL_NAME \
   --ckpt CKPT \
-  --test-dir path/to/test/file
+  --test-file path/to/test/file
 ```
 Here is style transfer applied to Linkin Park's Numb :D
 <div align = 'center'>
