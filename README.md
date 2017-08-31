@@ -1,17 +1,23 @@
 # fast-style-transfer
 Fast style transfer in TensorFlow
 
-### Dependencies
+Our implementation is based off Lengstrom's [implementation](https://github.com/lengstrom/fast-style-transfer). The following modifications where made:
+
+1. Transpose convolutions were replaced with nearest neighbor upsampling, based on Odena's [Deconvolution and Checkerboard Artifacts](https://distill.pub/2016/deconv-checkerboard/).
+2. Zero-padding replaced with reflection-padding in convolutions, based on Dumoulin's [A Learned Representation For Artistic Style](https://arxiv.org/abs/1610.07629).
+3. Added Tensorboard visualizations.
+
+## Dependencies
 ```bash
 python==2.7
 numpy==1.13.0
 scipy==0.18.1
-tensorflow==1.2.1
+tensorflow==1.1.0
 tensorbayes==0.2.0
 ffmpeg==3.2.2
 ```
 
-### Run style transfer
+## Run style transfer
 **Get training data**
 
 Get data and VGG weights for training:
@@ -49,8 +55,12 @@ python main.py test \
   --ckpt CKPT \
   --test-dir path/to/test/file
 ```
+Here is style transfer applied to Linkin Park's Numb :D
+<div align = 'center'>
+<img src = 'assets/numb.gif'>
+</div>
 
-### Tensorboard visualization
+## Tensorboard visualization
 
 A tensorboard summary is created and saved in `log` when training the model. You can see how the model is doing there.
 ![smileyball](assets/tensorboard.png)
