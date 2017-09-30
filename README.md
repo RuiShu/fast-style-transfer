@@ -1,21 +1,27 @@
 # fast-style-transfer
-Fast style transfer in TensorFlow
+Just a little fun I had during the summer implementing fast style transfer in TensorFlow. When I have the time, I'll look into implementing [n-style transfer](https://arxiv.org/abs/1610.07629) and [universal style transfer](https://arxiv.org/abs/1705.08086).
 
-Our implementation is based off Lengstrom's [implementation](https://github.com/lengstrom/fast-style-transfer). The following modifications where made:
+Our implementation is based off Logan Engstrom's [implementation](https://github.com/lengstrom/fast-style-transfer). The following modifications where made:
 
 1. Transpose convolutions were replaced with nearest neighbor upsampling, based on Odena's [Deconvolution and Checkerboard Artifacts](https://distill.pub/2016/deconv-checkerboard/).
 2. Zero-padding replaced with reflection-padding in convolutions, based on Dumoulin's [A Learned Representation For Artistic Style](https://arxiv.org/abs/1610.07629).
 3. Added Tensorboard visualizations.
 
 ## Dependencies
+You'll need
 ```bash
 python==2.7
+ffmpeg==3.2.2
+```
+
+You'll also need the following python libraries
+```bash
 numpy==1.13.0
 scipy==0.18.1
 tensorflow==1.1.0
 tensorbayes==0.2.0
-ffmpeg==3.2.2
 ```
+
 
 ## Run style transfer
 **Get training data**
